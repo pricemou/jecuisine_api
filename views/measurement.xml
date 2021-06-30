@@ -1,0 +1,69 @@
+<odoo>
+  <data>
+        <!-- jecuisine.measurement form view -->
+        <record id="jecuisine_measurement_view_form" model="ir.ui.view">
+            <field name="name">jecuisine.measurement.view.form</field>
+            <field name="model">jecuisine.measurement</field>
+            <field name="arch" type="xml">
+                <form string="Unités de mesure ">
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="measure"/>
+                                <field name="abreviation"/> 
+                                <field name="description"/> 
+                            </group>
+                            <group>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- jecuisine.measurement tree view -->
+        <record id="jecuisine_measurement_view_tree" model="ir.ui.view">
+            <field name="name">jecuisine.measurement.view.tree</field>
+            <field name="model">jecuisine.measurement</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="measure"/> 
+                    <field name="abreviation"/>                   
+                    <field name="description"/>                    
+                </tree>
+            </field>
+        </record>
+
+        <!-- jecuisine.measurement action window -->
+        <record id="jecuisine_measurement_action" model="ir.actions.act_window">
+            <field name="name">Unités de mesure</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">jecuisine.measurement</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_type">form</field>
+            <field name="help" type="html">
+               <p class="o_view_nocontent_smiling_face">
+                        Aucune unité de mesure. Ajouter une unité de mesure. 
+                    </p>
+                    <p>
+                    Liste des unités de mesure enregistrées pour les différents ingredients.
+                    </p>
+            </field>
+        </record>
+
+        <!-- jecuisine.measurement search view -->
+        <record id="jecuisine_measurement_view_search" model="ir.ui.view">
+            <field name="name">jecuisine.measurement.view.search</field>
+            <field name="model">jecuisine.measurement</field>
+            <field name="arch" type="xml">
+                <search string="Search unité de mesure">
+                    <!-- Add your fields here -->
+                    <field name="measure"/>
+                    <field name="abreviation"/>
+                    <field name="description"/>           
+                </search>
+            </field>
+        </record>
+
+      </data>
+</odoo>

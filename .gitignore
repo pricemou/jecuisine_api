@@ -1,0 +1,7 @@
+.vscode/
+models/__pycache__/*.py[cod]
+controllers/__pycache__/*.py[cod]
+models/__pycache__/*.*$py.class
+controllers/__pycache__/*$py.class
+models/__pycache__/*.pyc
+controllers/__pycache__/*.pyc

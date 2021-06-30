@@ -1,0 +1,16 @@
+<odoo>
+  <data>
+        <!-- Root menu -->
+        <menuitem name="JeCuisine" id="jecuisine_main_menu"/>
+        <!-- This Menu Item must have a parent and an action -->
+        <menuitem id="je_cuisine_recette_menu_act" name="Recettes" parent="jecuisine_main_menu" action="jecuisine_recipe_action" sequence="5"/>
+        <menuitem id="je_cuisine_ingredient_menu_act" name="Ingredients" parent="jecuisine_main_menu" action="jecuisine_ingredient_action" sequence="6"/>
+        <menuitem id="je_cuisine_category_menu_act" name="Catégories" parent="jecuisine_main_menu" action="jecuisine_category_action" sequence="6"/>
+        <menuitem id="je_cuisine_origin_menu_act" name="Origines" parent="jecuisine_main_menu" action="jecuisine_origin_action" sequence="6"/>
+        <!-- not necessary menu -->
+        <menuitem id="je_cuisine_quantity_menu_act" name="Quantités" parent="jecuisine_main_menu" action="jecuisine_quantity_action" sequence="7"/>
+        <menuitem id="je_cuisine_measurement_menu_act" name="Unités de mesure" parent="jecuisine_main_menu" action="jecuisine_measurement_action" sequence="8"/>
+        <menuitem id="je_cuisine_ingredient_with_qty_menu_act" name="Ingredients avec qté" parent="jecuisine_main_menu" action="jecuisine_ingredient_qty_action" sequence="9"/>
+        <menuitem id="je_cuisine_steps_menu_act" name="Étapes" parent="jecuisine_main_menu" action="jecuisine_steps_action" sequence="8"/>
+      </data>
+</odoo>

@@ -1,0 +1,135 @@
+<odoo>
+  <data>
+        <!-- jecuisine.recipe form view -->
+        <record id="jecuisine_recipe_view_form" model="ir.ui.view">
+            <field name="name">jecuisine.recipe.view.form</field>
+            <field name="model">jecuisine.recipe</field>
+            <field name="arch" type="xml">
+                <form string="Recipes">
+                    <sheet>
+                    <field name="image" widget="image" class="oe_avatar" options="{&quot;preview_image&quot;: &quot;image&quot;, &quot;size&quot;: [90, 90]}"/>
+                    <div class="oe_title">
+                        <h1>
+                            <field name="name" default_focus="1" placeholder="Nom de la recette" />
+                        </h1>
+                    </div>
+                        <group>
+                            <group>
+                                <field name="description"/>
+                            </group>
+                            <group>
+                                <field name="category_id"/>
+                                <field name="origin_id"/>
+                            </group>
+                        </group>
+                        <notebook>
+                            <page name="ingredients" string="Les ingredients">
+                                <field name="ingredient_ids" >
+                                    <tree editable="bottom">
+                                        <field name="ingredient"/>
+                                        <field name="qty"/>
+                                        <field name="measure"/>
+                                        <field name="price_total" sum="Montant Total"/>
+                                    </tree>
+                                </field>
+                            </page>
+                            <page name="steps" string="Étapes">
+                                <field name="steps_ids" >
+                                    <tree editable="bottom">
+                                        <field name="description"/>
+                                        <field name="time" widget="float_time" sum="Temps total"/>
+                                    </tree>
+                                </field>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- jecuisine.recipe tree view -->
+        <record id="jecuisine_recipe_view_tree" model="ir.ui.view">
+            <field name="name">jecuisine.recipe.view.tree</field>
+            <field name="model">jecuisine.recipe</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>          
+                    <field name="description"/>
+                    <field name="category_id"/>
+                    <field name="origin_id"/>          
+                </tree>
+            </field>
+        </record>
+
+        <!-- jecuisine.recipe action window -->
+        <record id="jecuisine_recipe_action" model="ir.actions.act_window">
+            <field name="name">Recettes</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">jecuisine.recipe</field>
+            <field name="view_mode">kanban,tree,form</field>
+            <field name="view_type">form</field>
+            <field name="help" type="html">
+               <p class="o_view_nocontent_smiling_face">
+                        Aucune recette. Ajouter une recette. 
+                    </p>
+                    <p>
+                    Liste des recettes que la plateforme JeCuisine va proposer aux clients.
+                    </p>
+            </field>
+        </record>
+
+        <!-- jecuisine.recipe search view -->
+        <record id="jecuisine_recipe_view_search" model="ir.ui.view">
+            <field name="name">jecuisine.recipe.view.search</field>
+            <field name="model">jecuisine.recipe</field>
+            <field name="arch" type="xml">
+                <search string="Search recipe">
+                    <!-- Add your fields here -->
+                    <field name="name"/>          
+                    <field name="description"/>
+                    <field name="category_id"/>
+                    <field name="origin_id"/>
+                </search>
+            </field>
+        </record>
+
+        <!-- jecuisine.recipe kanban view -->
+        <record id='jecuisine_recipe_view_kanban' model='ir.ui.view'>
+        <field name="name">jecuisine.recipe.kanban</field>
+        <field name="model">jecuisine.recipe</field>
+        <field name="arch" type="xml">
+            <kanban string="Kanban recipe" >
+                <field name="id" />
+                <field name="image" />
+                <field name="name" />
+                <field name="description" />
+                <field name="category_id"/>
+                <field name="origin_id"/>
+                <templates>
+                    <t t-name="kanban-box">
+                        <div class="oe_kanban_global_click">
+                            <div class="o_kanban_image">
+                                <img t-att-src="kanban_image('jecuisine.recipe', 'image', record.id.raw_value)" alt="Image recipe"/>
+                            </div>
+                                <div class="oe_kanban_details">
+                                    <strong class="o_kanban_record_title">
+                                        <field name="name"/>
+                                    </strong>
+                                    <ul>
+                                        <li>
+                                            <t t-if="record.category_id.raw_value"><field name="category_id"/></t>
+                                        </li>
+                                        <li>
+                                            <t t-if="record.origin_id.raw_value"><field name="origin_id"/></t>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
+
+      </data>
+</odoo>

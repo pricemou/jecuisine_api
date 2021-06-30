@@ -1,0 +1,9 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_jecuisine_recipe_admin,jecuisine.recipe,model_jecuisine_recipe,base.user_admin,1,1,1,1
+access_jecuisine_ingredient_admin,jecuisine.ingredient,model_jecuisine_ingredient,base.user_admin,1,1,1,1
+access_jecuisine_quantity_admin,jecuisine.quantity,model_jecuisine_quantity,base.user_admin,1,1,1,1
+access_jecuisine_measurement_admin,jecuisine.measurement,model_jecuisine_measurement,base.user_admin,1,1,1,1
+access_jecuisine_ingredient_qty_admin,jecuisine.ingredient.qty,model_jecuisine_ingredient_qty,base.user_admin,1,1,1,1
+access_jecuisine_category_admin,jecuisine.category,model_jecuisine_category,base.user_admin,1,1,1,1
+access_jecuisine_origin_admin,jecuisine.origin,model_jecuisine_origin,base.user_admin,1,1,1,1
+access_jecuisine_steps_admin,jecuisine.steps,model_jecuisine_steps,base.user_admin,1,1,1,1

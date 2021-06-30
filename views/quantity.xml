@@ -1,0 +1,65 @@
+<odoo>
+  <data>
+        <!-- jecuisine.quantity form view -->
+        <record id="jecuisine_quantity_view_form" model="ir.ui.view">
+            <field name="name">jecuisine.quantity.view.form</field>
+            <field name="model">jecuisine.quantity</field>
+            <field name="arch" type="xml">
+                <form string="Quantités">
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="qty"/>
+                            </group>
+                            <group>
+                   
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- jecuisine.quantity tree view -->
+        <record id="jecuisine_quantity_view_tree" model="ir.ui.view">
+            <field name="name">jecuisine.quantity.view.tree</field>
+            <field name="model">jecuisine.quantity</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="qty"/>
+                                
+                </tree>
+            </field>
+        </record>
+
+        <!-- jecuisine.quantity action window -->
+        <record id="jecuisine_quantity_action" model="ir.actions.act_window">
+            <field name="name">Quantités</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">jecuisine.quantity</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_type">form</field>
+            <field name="help" type="html">
+               <p class="o_view_nocontent_smiling_face">
+                        Aucune quantité. Ajouter une quantité. 
+                    </p>
+                    <p>
+                    Liste des quantités enregistrées pour les différents ingredients.
+                    </p>
+            </field>
+        </record>
+
+        <!-- jecuisine.quantity search view -->
+        <record id="jecuisine_quantity_view_search" model="ir.ui.view">
+            <field name="name">jecuisine.quantity.view.search</field>
+            <field name="model">jecuisine.quantity</field>
+            <field name="arch" type="xml">
+                <search string="Search quantité">
+                    <!-- Add your fields here -->
+                    <field name="qty"/>           
+                </search>
+            </field>
+        </record>
+
+      </data>
+</odoo>

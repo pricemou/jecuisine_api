@@ -1,0 +1,66 @@
+<odoo>
+  <data>
+        <!-- jecuisine.steps form view -->
+        <record id="jecuisine_steps_view_form" model="ir.ui.view">
+            <field name="name">jecuisine.steps.view.form</field>
+            <field name="model">jecuisine.steps</field>
+            <field name="arch" type="xml">
+                <form string="Étapes">
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="time" widget="float_time"/>
+                            </group>
+                            <group>
+                                <field name="description"/> 
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- jecuisine.steps tree view -->
+        <record id="jecuisine_steps_view_tree" model="ir.ui.view">
+            <field name="name">jecuisine.steps.view.tree</field>
+            <field name="model">jecuisine.steps</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="time"/>                    
+                    <field name="description"/>                    
+                </tree>
+            </field>
+        </record>
+
+        <!-- jecuisine.steps action window -->
+        <record id="jecuisine_steps_action" model="ir.actions.act_window">
+            <field name="name">Étapes</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">jecuisine.steps</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_type">form</field>
+            <field name="help" type="html">
+               <p class="o_view_nocontent_smiling_face">
+                        Aucune étape. Ajouter une étape. 
+                    </p>
+                    <p>
+                    Liste des étapes de préparation des différentes recettes.
+                    </p>
+            </field>
+        </record>
+
+        <!-- jecuisine.steps search view -->
+        <record id="jecuisine_steps_view_search" model="ir.ui.view">
+            <field name="name">jecuisine.steps.view.search</field>
+            <field name="model">jecuisine.steps</field>
+            <field name="arch" type="xml">
+                <search string="Search étape">
+                    <!-- Add your fields here -->
+                    <field name="time"/>
+                    <field name="description"/>           
+                </search>
+            </field>
+        </record>
+
+      </data>
+</odoo>
